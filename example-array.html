@@ -24,7 +24,7 @@
         <tr>
       `);
 
-      // Perulangan Mengambil data array
+      // Perulangan Mengambil Data Array
       head.forEach((judul) => {
         document.write(`<th>${judul}</th>`);
       });
@@ -38,10 +38,11 @@
     <tbody>
       <tr>
     `);
-      // Perulangan Mengambil data array
-      user.forEach((identitas) => {
-        document.write(`<td>${identitas} </td>`);
-      });
+    
+          // Perulangan For Mengambil Data Array
+      for(i = 0; i < user.length; i++){
+        document.write(`<td>${ user[i] } </td>`);
+      }
 
       document.write(`
     </tr>
