@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script>
+
+
+      document.write("<h3 align='center'> Example Menggunakan Array </h3>")
+
+      let head = ["nama", "jabatan", "status"];
+      let user = ["satria", "manager", "menikah"];
+      let gaji = undefined;
+
+      document.write(`
+    <h2>Nama Pegawai : ${user[0]}</h2>
+    <table border='2px' bordercolor="green" cellspacing='2px' cellpadding='5px'>
+      <thead>
+        <tr>
+      `);
+
+      // Perulangan Mengambil data array
+      head.forEach((judul) => {
+        document.write(`<th>${judul}</th>`);
+      });
+
+      document.write(`
+    </tr>
+    </thead>
+      `);
+
+      document.write(`
+    <tbody>
+      <tr>
+    `);
+      // Perulangan Mengambil data array
+      user.forEach((identitas) => {
+        document.write(`<td>${identitas} </td>`);
+      });
+
+      document.write(`
+    </tr>
+    </tbody>
+    `);
+
+      document.write(`</table> <br> <hr>`);
+      // arrat select index
+      if (user[1] == "manager") {
+        gaji = 150000000;
+      } else if (user[1] == "asissten") {
+        gaji = 100000000;
+      } else {
+        gaji = 50000000;
+      }
+
+      let tunjangan_jabatan = (15 * gaji) / 100;
+      let bpjs = (gaji * 10) / 100;
+      let tunjangan_keluarga = user[2] == "menikah" ? (gaji * 20) / 100 : 0;
+      let total = gaji + bpjs + tunjangan_jabatan + tunjangan_keluarga;
+
+      document.write(`
+    <table border="2px" bordercolor="blue">
+
+      <thead>
+        <tr align='center'>
+          <th>Gaji Pokok</th>
+          <th>Tujangan Jabatan</th>
+          <th>BPJS</th>
+          <th>Tunjangan Keluarga</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+          <tr align='center'>
+            <td>${gaji}</td>
+            <td>${tunjangan_jabatan}</td>
+            <td>${bpjs}</td>
+            <td>${tunjangan_keluarga}</td>
+          </tr>
+      </tbody>
+      
+      <tfoot>
+          <tr>
+          <th>Total Gaji</th>
+          <td colspan='3'>${total}</td>
+        </tr>
+      </tfoot>
+    
+    </table>
+    `);
+
+
+    </script>
+  </body>
+</html>
