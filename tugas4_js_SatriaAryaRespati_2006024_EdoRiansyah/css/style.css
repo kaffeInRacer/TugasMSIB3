@@ -1,0 +1,62 @@
+body,html {
+ 
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+h3, h4, label{
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: monospace;
+  margin-bottom: 2px;
+}
+
+
+
+h3{
+  border-bottom: 3px solid #4992fd;
+  font-size: 1.2rem !important;
+  padding-bottom: 15px;
+}
+
+.test{
+  background-color: rgb(25, 24, 24);
+  
+}
+
+.modal-body {
+  width: 100%;
+}
+
+.main{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.main .card-h {
+  height: auto;
+  width: 50%;
+  background-color: #505359;
+}
+
+h5.modal-title.text-center {
+  width: 100%;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+tr{
+  text-align: center;
+}
+
+input{
+  margin-bottom: 12px;
+}
+
+
+
+
