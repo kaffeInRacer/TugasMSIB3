@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="./css/style.css">
+<title>CSS || ~</title>
+</head>
+<body class="test" >
+  
+
+  <div class="container main">
+    <div class="card text-white card-h">
+      <div class="card-body">
+        <form action="" id="form-field">
+
+       
+          <h3 class="text-center mb-4">Pembelian Barang Dengan Konversi Kurs</h3>
+        
+        
+          <h4><label for="item">Nama Pembeli</label></h4>
+          <input type="email" class="form-control" name="nama" id="nama">
+        
+        
+          <h4><label for="item">Nama Barang</label></h4>
+          <input type="email" class="form-control" id="barang">
+        
+        
+          <h4><label for="item">Harga Barang</label></h4>
+          <input type="email" class="form-control" id="harga">
+        
+        
+          <h4><label for="item">Jumlah Barang</label></h4>
+          <input type="email" class="form-control" id="jumlah">
+          
+          <h4><label for="item">Valas</label></h4>
+          <select class="form-select mb-4" aria-label="Default select example" id="valas" onchange="inputRequired()">
+            <option selected value="1">Valas Yang Di Gunakan</option>
+            <option value="14921">Dolar ($)</option>
+            <option value="10298">Yen (¥)</option>
+            <option value="14883">Euro (€)</option>
+          </select>
+        
+          <div class="text-center">
+            <input name="" id="clear-data" class="btn btn-danger" type="button" value="clear" onclick="reseet()">
+          </div>
+          
+        </form> 
+      </div>
+    </div> 
+
+    <!-- The Modal -->
+    <div class="modal fade" tabindex="-1" id="my_modal">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center">HASIL DATA</h5>
+          </div>
+          <div class="modal-body">
+            
+       <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Pembeli</th>
+                <th scope="col">Nama Barang</th>
+                <th scope="col">Harga Barang</th>
+                <th scope="col">Jumlah Barang</th>
+                <th scope="col">Valas</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            
+            <tbody id="content_data">
+              <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+    
+    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal Alert -->
+    <div class="modal fade" tabindex="-1" id="my_allert">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center text-bg-danger">Oops...</h5>
+          </div>
+          <div class="modal-body text-center text-danger">
+            Data Tidak Valid
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>
+
+</body>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+<!-- JS -->
+
+<script>
+
+  function data() {
+    let user = document.getElementById('form-field').nama.value;
+    let item = document.getElementById('form-field').barang.value;
+    let price = document.getElementById('form-field').harga.value;
+    let qty = document.getElementById('form-field').jumlah.value;
+    let getValas = document.getElementById('form-field').valas.value;
+    let form = document.getElementById('form-field');
+
+    return { form ,user, item, price, qty, getValas }
+  }
+
+
+  function show_modal() {
+    let tampil = new bootstrap.Modal('#my_modal');
+    let get_data = data();
+
+    let no = 1;
+    let total = get_data.getValas * get_data.price * get_data.qty;
+    let matauang;
+
+    tabel = '';
+    tabel += ` 
+    
+  
+      <td>${no++}</td>
+      <td>${get_data.user}</td>
+      <td>${get_data.item}</td>
+      <td>${get_data.price}</td>
+      <td>${get_data.qty}</td>
+      <td>${get_data.getValas}</td>
+      <td>${total}</td>
+
+    
+    `; 
+    tampil.show()
+    
+
+    document.querySelector('#content_data').innerHTML = tabel; 
+  
+  };
+
+  function inputRequired() {
+    z = data();
+    required = (z.user != '' && z.item != '' && z.price != '' && z.qty != '' && z.getValas != 1 ) ? show_modal() : sweetAlert();
+
+  }
+
+  function reseet() {
+    x = data();
+    x.form.reset();
+  };
+
+  function sweetAlert(){
+    let inputAllert = new bootstrap.Modal('#my_allert');
+    inputAllert.show();
+  };
+
+</script>
+
+</body>
+</html>
