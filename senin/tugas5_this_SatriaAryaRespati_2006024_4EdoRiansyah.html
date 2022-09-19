@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+
+<style>
+  .container.d-flex.align-items-center {
+    height: 100%;
+}
+
+body,html {
+    height: 100%;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.card {/* From https: //css.glass */
+    background: rgba(8, 7, 7, 0.64);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+    color: white;
+    height: auto;
+    width: 50%;
+}
+</style>
+
+<body>
+  <div class="container d-flex align-items-center justify-content-center">
+    
+  <div class="card">
+  
+    <div class="card-body">
+      <h5 class="card-title text-center">Kalkulator Online</h5>
+    
+    <form action="" class="" id="form-field">
+
+        <div class="mb-3">
+          <input type="text" class="form-control" name="input1" id="" aria-describedby="helpId" placeholder="Input 1">
+        </div>
+
+
+        <div class="mb-3">
+          <input type="text" class="form-control" name="input2" id="" aria-describedby="helpId" placeholder="Input 2">
+        </div>
+
+
+      <fieldset disabled>
+        <div class="mb-2">
+          <label for="getHasil" class="form-label text-center w-100">Hasil Input</label>
+          <input type="text" id="getHasil" class="form-control" >
+        </div>  
+      </fieldset>
+
+    </form>
+      
+
+      <div class="text-center m-2" >
+        <button class="btn btn-primary btn-lg" value="plus" id="button" name="x"  onclick="total(this)" type="button" >+</button>
+        <button class="btn btn-info btn-lg"    value="minus" id="button" name="x"  onclick="total(this)" type="button">-</button>
+        <button class="btn btn-success btn-lg" value="time" id="button" name="x"  onclick="total(this)" type="button">x</button>
+        <button class="btn btn-warning btn-lg" value="for" id="button" name="x"  onclick="total(this)" type="button">/</button>
+        <button class="btn btn-danger btn-lg"  value="multi" id="button" name="x"  onclick="total(this)" type="button">^</button>
+      </div>
+
+    
+    </div>
+
+  </div>
+</div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="./javascript/main.js"></script>
+  <script>
+
+  
+
+  </script>
+</body>
+</html>
