@@ -37,12 +37,15 @@ infoGempa(){
 
 }
 
-  a = new gempa('bandung',4).infoGempa();
-  b = new gempa('jakarta',6).infoGempa();
-  c = new gempa('banten',7).infoGempa();
-  d = new gempa('sulawesi',8).infoGempa();
-  e = new gempa('kalimantan',2).infoGempa();
-  f = new gempa('aceh',1).infoGempa();
-  g = new gempa('bali',3).infoGempa();
-  h = new gempa('bali',5).infoGempa();
+  g1 = new gempa('bandung',4).infoGempa();
+  g2 = new gempa('jakarta',6).infoGempa();
+  g3 = new gempa('banten',7).infoGempa();
+  g4 = new gempa('sulawesi',8).infoGempa();
+  g5 = new gempa('kalimantan',2).infoGempa();
+  g6 = new gempa('aceh',1).infoGempa();
+  g7 = new gempa('bali',3).infoGempa();
+  g8 = new gempa('Medan',5).infoGempa();
+  g9 = new gempa('NTT',6).infoGempa();
+  g10 = new gempa('NTB',11).infoGempa();
+
 
