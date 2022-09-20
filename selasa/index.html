@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+   class bank {
+  constructor(norek, nasabah, saldo){
+    this.no = norek;
+    this.nama = nasabah;
+    this.uangUang = saldo;
+  }
+
+  menabung(uang){
+    this.uangUang += uang;
+    
+  }
+
+  menarik(uang){
+    this.uangUang -= uang;
+    
+  }
+
+  mencetak(){
+    // return`no: ${this.no} nama: ${this.nama} saldo: ${this.uangUang}`
+    document.write(`
+    <br>No: ${this.no}
+    <br>Nama Nasabah: ${this.nama}
+    <br> Saldo : ${this.uangUang}
+    <hr>
+    `);
+  };
+
+}
+
+const user1 = new bank(001, "bernard", 1000000);
+const user2 = new bank(002, "swiper", 3000000);
+
+user1.menarik(100000);
+user2.menabung(500000);
+
+
+user1.mencetak(); user2.mencetak();
+  </script>
+
+</body>
+</html>
