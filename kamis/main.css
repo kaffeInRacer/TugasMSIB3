@@ -1,0 +1,48 @@
+
+  html,body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    
+  }
+
+  body{
+    background-color: grey;
+  }
+
+  .container{
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    height: auto;
+    width: 100%;
+}
+
+img{
+  width: 50%;
+  display: block;
+  border-radius: 50%;
+  margin: none;
+  padding: 1px;
+  border: 3px solid rgb(176, 176, 182);
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.on-height{
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  cursor: pointer;
+  background-color: rgb(88, 100, 100);
+  color: white;
+  font-family: cursive;
+  border-color: rgb(174, 200, 220);
+}
+
+.accordion-item {
+    background-color: #212529;
+}
